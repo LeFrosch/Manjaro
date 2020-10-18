@@ -1,0 +1,33 @@
+<idea-plugin>
+  <id>b.brauner.Matcha-Dark-Azul-Theme</id>
+  <name>Matcha Dark Azul Theme</name>
+  <version>1.2</version>
+  <vendor email="daniel.brauner@online.de" url="http://bbrauner.de">bbrauner</vendor>
+
+  <description><![CDATA[
+      <h1>Matcha dark azul theme for Intellij</h1>
+      <p>This color theme is based on the <a href="https://github.com/vinceliuice/Matcha-gtk-theme">matcha</a> dark azul theme and the editor color theme is based on the <a href="https://github.com/dracula/dracula-theme">dracula theme</a> for Intellij.</p>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      First ever plugin Project for IntelliJ, man 40 characters are much.
+    ]]>
+  </change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <themeProvider id="67c679ae-8bc9-4cca-924a-dee535c208eb" path="/Matcha_Dark_Azul.theme.json"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>

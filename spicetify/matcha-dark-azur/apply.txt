@@ -1,0 +1,6 @@
+// copy dribbblish.js to .config/spicetify/Extensions/
+// copy . to .config/spicetify/Themes/
+
+spicetify config extensions dribbblish.js
+spicetify config current_theme matcha-dark-azur color_scheme Base
+spicetify apply
