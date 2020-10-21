@@ -1,65 +1,18 @@
---[[
-#=====================================================================================
-#                               arcolinux
-# Date    : package-date
-# Author  : Erik Dubois at http://www.erikdubois.be
-# Version : package-version
-# License : Distributed under the terms of GNU GPL version 2 or later
-# Documentation : http://erikdubois.be/
-#======================================================================================
-# CONKY
-# For commands in conky.config section:
-# http://conky.sourceforge.net/config_settings.html
-#
-# For commands in conky.text section:
-# http://conky.sourceforge.net/variables.html
-#
-# A PDF with all variables is provided
-#=====================================================================================
-# FONTS
-# To avoid copyright infringements you will have to download
-# and install the fonts yourself sometimes.
-#=====================================================================================
-# GENERAL INFO ABOUT FONTS
-# Go and look for a nice font on sites like http://www.dafont.com/
-# Download and unzip - double click the font to install it (font-manager must be installed)
-# No font-manager then put fonts in ~/.fonts
-# Change the font name in the conky
-# The name can be known with a command in the terminal: fc-list | grep "part of name"
-# Change width and height of the conky according to font
-# Reboot your system or fc-cache -fv in terminal
-# Enjoy
-#=====================================================================================
-# FONTS FOR THIS CONKY
-# http://www.dafont.com/style-bats.font
-#======================================================================================
-# Titus Modifications
-#======================================================================================
-# Changed time from Roboto to GE Inspira which is a base Conky Gotham Addon
-# Changed Drives from 2 to 3
-# Modified one_window_type from desktop to normal for KDE compatibility
-# Modified Ethernet settings
-# Modified Pink Lines to Bright Blue
-# Removed Extra symbols and incorrect formatting
-#======================================================================================
-
-]]
-
 conky.config = {
 
 	--Various settings
 
-	background = true, 				-- forked to background
+	background = true,					-- forked to background
 	cpu_avg_samples = 2,				-- The number of samples to average for CPU monitoring.
 	diskio_avg_samples = 2,				-- The number of samples to average for disk I/O monitoring.
 	double_buffer = true,				-- Use the Xdbe extension? (eliminates flicker)
-	if_up_strictness = 'address',			-- how strict if testing interface is up - up, link or address
+	if_up_strictness = 'address',		-- how strict if testing interface is up - up, link or address
 	net_avg_samples = 2,				-- The number of samples to average for net data
-	no_buffers = true,				-- Subtract (file system) buffers from used memory?
-	temperature_unit = 'celsius',			-- fahrenheit or celsius
+	no_buffers = true,					-- Subtract (file system) buffers from used memory?
+	temperature_unit = 'celsius',		-- fahrenheit or celsius
 	text_buffer_size = 2048,			-- size of buffer for display of content of large variables - default 256
 	update_interval = 2,				-- update interval
-	imlib_cache_size = 0,                       	-- disable image cache to get a new spotify cover per song
+	imlib_cache_size = 0,              	-- disable image cache to get a new spotify cover per song
 
 
 	--Placement
@@ -78,7 +31,7 @@ conky.config = {
 
 	border_inner_margin = 10, 			-- margin between border and text
 	border_outer_margin = 5, 			-- margin between border and edge of window
-	border_width = 0, 				-- border width in pixels
+	border_width = 0,					-- border width in pixels
 	default_bar_width = 80,				-- default is 0 - full width
 	default_bar_height = 10,			-- default is 6
 	default_gauge_height = 25,			-- default is 25
@@ -96,29 +49,30 @@ conky.config = {
 	--Textual
 
 	extra_newline = false,				-- extra newline at the end - for asesome's wiboxes
-	format_human_readable = true,			-- KiB, MiB rather then number of bytes
-	font = 'Roboto Mono:size=10',  			-- font for complete conky unless in code defined
-	max_text_width = 0,				-- 0 will make sure line does not get broken if width too smal
+	format_human_readable = true,		-- KiB, MiB rather then number of bytes
+	font = 'Roboto Mono:size=10',  		-- font for complete conky unless in code defined
+	max_text_width = 0,					-- 0 will make sure line does not get broken if width too smal
 	max_user_text = 16384,				-- max text in conky default 16384
-	override_utf8_locale = true,			-- force UTF8 requires xft
-	short_units = true,				-- shorten units from KiB to k
+	override_utf8_locale = true,		-- force UTF8 requires xft
+	short_units = true,					-- shorten units from KiB to k
 	top_name_width = 21,				-- width for $top name value default 15
 	top_name_verbose = false,			-- If true, top name shows the full command line of  each  process - Default value is false.
-	uppercase = false,				-- uppercase or not
+	uppercase = false,					-- uppercase or not
 	use_spacer = 'none',				-- adds spaces around certain objects to align - default none
-	use_xft = true,					-- xft font - anti-aliased font
-	xftalpha = 1,					-- alpha of the xft font - between 0-1
+	use_xft = true,						-- xft font - anti-aliased font
+	xftalpha = 1,						-- alpha of the xft font - between 0-1
 
 	--Windows
 
-	own_window = true,							-- create your own window to draw
-	own_window_argb_value = 100,			 			-- real transparency - composite manager required 0-255
-	own_window_argb_visual = true,						-- use ARGB - composite manager required
-	own_window_colour = '#000000',						-- set colour if own_window_transparent no
+	own_window = true,					-- create your own window to draw
+	own_window_argb_value = 100,		-- real transparency - composite manager required 0-255
+	own_window_argb_visual = true,		-- use ARGB - composite manager required
+	own_window_colour = '#000000',		-- set colour if own_window_transparent no
+	own_window_transparent = false,		-- if own_window_argb_visual is true sets background opacity 0%
+	own_window_title = 'system_conky',	-- set the name manually  - default conky "hostname"
+	own_window_type = 'desktop',		-- if own_window true options are: normal/override/dock/desktop/panel
+	
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',  -- if own_window true - just hints - own_window_type sets it
-	own_window_transparent = false,						-- if own_window_argb_visual is true sets background opacity 0%
-	own_window_title = 'system_conky',					-- set the name manually  - default conky "hostname"
-	own_window_type = 'desktop',						-- if own_window true options are: normal/override/dock/desktop/panel
 
 
 	--Colours
@@ -126,12 +80,37 @@ conky.config = {
 	default_color = '#d3dae3',  				-- default color and border color
 	color1 = '#16A085',
 	color2 = '#64a5d1',
-	--color3 = '#cccccc',
-	--color4 = '#D9BC83',
 	color5 = '#3498db',
-	--color6 = '#FFFFFF'
 
 };
+
+function split (inputstr, sep)
+	local t = {}
+
+	for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+		table.insert(t, str)
+	end
+	return t
+end
+
+fileRead = false
+file = io.open("events", "rb")
+
+if file then
+	events = ""
+	for line in file:lines() do 
+		splited = split(line, ";")
+		if splited[3] ~= nil then
+			fileRead = true
+			events = "${offset 30}"..splited[1].."${goto 95}"..splited[2].."${goto 150}"..splited[3].."\n"..events
+		end
+	end
+	events = "${color2}${offset 30}From${goto 95}To${goto 150}Subject${color}\n"..events
+end
+
+if not fileRead then
+	events = "${color2}${offset 30}No Events for to day :)"
+end
 
 conky.text = [[
 ${color6}${voffset 4}${font GE Inspira:size=40}${alignc}${time %l}:${time %M} ${time %p}${font}${color}
@@ -181,4 +160,7 @@ ${color2}${offset 30}Eth Down:${color} ${alignr}${offset -10$}${downspeed eno1}$
 ${color5}${color5}${font Roboto:size=10}G R A P H I C S   ${hr 2}${font}${color}
 ${offset 30}${color2}GPU Temp:${color} ${alignr}+${execi 60 nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader} °C
 ${offset 30}${color2}GPU Clock:${color} ${alignr}${execi 60 nvidia-settings -q GPUCurrentClockFreqs | grep -m 1 Attribute | awk '{print $4}' | sed -e 's/\.//' | cut -d, -f1} MHz
-]];
+
+${color5}${color5}${font Roboto:size=10}E V E N T S   ${hr 2}${font}${color}
+
+]] .. events;
