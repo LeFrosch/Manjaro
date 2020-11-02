@@ -74,7 +74,6 @@ conky.config = {
 	
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',  -- if own_window true - just hints - own_window_type sets it
 
-
 	--Colours
 
 	default_color = '#d3dae3',  				-- default color and border color
@@ -83,34 +82,6 @@ conky.config = {
 	color5 = '#3498db',
 
 };
-
-function split (inputstr, sep)
-	local t = {}
-
-	for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-		table.insert(t, str)
-	end
-	return t
-end
-
-fileRead = false
-file = io.open("events", "rb")
-
-if file then
-	events = ""
-	for line in file:lines() do 
-		splited = split(line, ";")
-		if splited[3] ~= nil then
-			fileRead = true
-			events = "${offset 30}"..splited[1].."${goto 95}"..splited[2].."${goto 150}"..splited[3].."\n"..events
-		end
-	end
-	events = "${color2}${offset 30}From${goto 95}To${goto 150}Subject${color}\n"..events
-end
-
-if not fileRead then
-	events = "${color2}${offset 30}No Events for to day :)"
-end
 
 conky.text = [[
 ${color6}${voffset 4}${font GE Inspira:size=40}${alignc}${time %l}:${time %M} ${time %p}${font}${color}
@@ -160,7 +131,4 @@ ${color2}${offset 30}Eth Down:${color} ${alignr}${offset -10$}${downspeed eno1}$
 ${color5}${color5}${font Roboto:size=10}G R A P H I C S   ${hr 2}${font}${color}
 ${offset 30}${color2}GPU Temp:${color} ${alignr}+${execi 60 nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader} °C
 ${offset 30}${color2}GPU Clock:${color} ${alignr}${execi 60 nvidia-settings -q GPUCurrentClockFreqs | grep -m 1 Attribute | awk '{print $4}' | sed -e 's/\.//' | cut -d, -f1} MHz
-
-${color5}${color5}${font Roboto:size=10}E V E N T S   ${hr 2}${font}${color}
-
-]] .. events;
+]];
